@@ -10,7 +10,7 @@ Makefile uses two tags in your file with HTML (can be raw HTML, ASP, PHP or any 
 
 ##### Your index.html pre make
 
-```
+```html
 <html>
 
 ...
@@ -52,7 +52,7 @@ Makefile uses two tags in your file with HTML (can be raw HTML, ASP, PHP or any 
 Note: Comments are kept just in order for clarity of what is actually modified
 Note2: <md5hash> in the filenames of the concatenated and minified files is the md5hash of the file. This is done in order to optimize caching.
 
-```
+```html
 <html>
 
 ...
