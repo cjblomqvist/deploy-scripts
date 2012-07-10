@@ -98,3 +98,6 @@ Shell script for uploading folder to FTP using ncftp. Usage:
 ```
 sh /your/place/of/the/script/ftp_upload_script.sh <host> <user> <password> <destination folder on ftp> <source folder on local>
 ```
+
+#### Requirements
+* ncftp
