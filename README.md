@@ -31,7 +31,7 @@ Makefile uses two tags in your file with HTML (can be raw HTML, ASP, PHP or any 
 ...
 
 
-<!-- Below two scripts will not be minified and concatenated -->
+<!-- Below script will not be minified and concatenated -->
 <!-- Also, below would have broken the makefile script because only local files are allowed -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
