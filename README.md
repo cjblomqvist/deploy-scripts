@@ -85,9 +85,9 @@ Note2: <md5hash> in the filenames of the concatenated and minified files is the 
 #### Requirements
 You need to specify a library for HTML, CSS and JS optimization/minification. Default is:
 
-HTML: HTML Compressor - http://code.google.com/p/htmlcompressor/
-CSS: YUI Compressor - http://developer.yahoo.com/yui/compressor/
-JS: UglifyJS - https://github.com/mishoo/UglifyJS/
+* HTML: HTML Compressor - http://code.google.com/p/htmlcompressor/
+* CSS: YUI Compressor - http://developer.yahoo.com/yui/compressor/
+* JS: UglifyJS - https://github.com/mishoo/UglifyJS/
 
 This can easily be modified for your own use. Note that you need to specify the location of the CLIs of respective optimizer/minifcator in the Makefile before using it.
 
