@@ -98,6 +98,6 @@ ifneq ($(JS_FILES),)
 endif
 
 CLEAN:
-	rm $(TEMP_FILE)
-	rm $(TEMP_FILE_CSS)
-	rm $(TEMP_FILE_JS)
+	rm -f $(TEMP_FILE)
+	rm -f $(TEMP_FILE_CSS)
+	rm -f $(TEMP_FILE_JS)
