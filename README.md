@@ -16,11 +16,7 @@ Makefile uses two tags in your file with HTML (can be raw HTML, ASP, PHP or any 
 ...
 
 
-<!-- Below stylesheet will not be minified and concatenated -->
-<!-- Also, below would have broken the script because no root slash is allow at the moment (or, it will most likely end up doing some weird stuff if a root slash is included) -->
-<link rel="stylesheet" href="/css/no_minify_and_concat.css">
-
-<!-- Below stylesheets will however -->
+<!-- Below stylesheets will be minified and concatenated -->
 <!-- CONCAT:CSS -->
 <link rel="stylesheet" href="css/stylesheet1.css">
 <link rel="stylesheet" href="css/stylesheet2.css">
@@ -32,7 +28,7 @@ Makefile uses two tags in your file with HTML (can be raw HTML, ASP, PHP or any 
 
 
 <!-- Below script will not be minified and concatenated -->
-<!-- Also, below would have broken the makefile script because only local files are allowed -->
+<!-- Also, below script would have broken the makefile script because only local files are allowed -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 <!-- Below scripts will however -->
@@ -58,11 +54,7 @@ Makefile uses two tags in your file with HTML (can be raw HTML, ASP, PHP or any 
 ...
 
 
-<!-- Below stylesheet will not be minified and concatenated -->
-<!-- Also, below would have broken the script because no root slash is allow at the moment (or, it will most likely end up doing some weird stuff if a root slash is included) -->
-<link rel="stylesheet" href="/css/no_minify_and_concat.css">
-
-<!-- Below stylesheets will however -->
+<!-- Below stylesheets will be minified and concatenated -->
 <link rel="stylesheet" href="css/all.<md5hash>.css">
 
 
@@ -70,7 +62,7 @@ Makefile uses two tags in your file with HTML (can be raw HTML, ASP, PHP or any 
 
 
 <!-- Below script will not be minified and concatenated -->
-<!-- Also, below would have broken the makefile script because only local files are allowed -->
+<!-- Also, below script would have broken the makefile script because only local files are allowed -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 <!-- Below scripts will however -->
