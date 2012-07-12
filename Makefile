@@ -29,18 +29,19 @@ TEMP_FILE_JS = $(TEMP_FILE).js
 #	1: remove everything outside of START_PARENTHESIS and END_PARENTHESIS
 #	2: remove the first line (the line with START_PARENTHESIS)
 #	3: remove the the line with END_PARENTHESIS (the last line)
-#	4: remove everything not insidesrc="" on each line
-#	5: grab from INDEX_FILE 
-#	6: replace new lines with space
+#	4: grab from INDEX_FILE 
+#	5: remove everything not inside src="" on each line -- needs to be done with perl to be able to use lazy star (*?)
+#	6: replace initial / root slash with ./ to do proper paths
+#	7: replace new lines with space
 CSS_FILES = $(shell sed \
 	-e "/$(START_CSS_TAG)/,/$(END_CSS_TAG)/ !d" \
 	-e "1,1 d" \
 	-e "/$(END_CSS_TAG)/ d" \
-	-e 's/.*href="\(.*\)".*/\1/' \
-	-e 's|^/|\./|' \
 		< $(INDEX_FILE) | \
-			tr "\n" " " \
-				)
+			perl -pe 's|.*href="(.*?)".*|\1|' | \
+				sed 's|^/|\./|' | \
+					tr "\n" " " \
+						)
 
 ## Grab all js files from INDEX_FILE
 
@@ -48,11 +49,11 @@ JS_FILES = $(shell sed \
 	-e "/$(START_JS_TAG)/,/$(END_JS_TAG)/ !d" \
 	-e "1,1 d" \
 	-e "/$(END_JS_TAG)/ d" \
-	-e 's/.*src="\(.*\)".*/\1/' \
-	-e 's|^/|\./|' \
 		< $(INDEX_FILE) | \
-			tr "\n" " " \
-				)
+			perl -pe 's|.*src="(.*?)".*|\1|' | \
+				sed 's|^/|\./|' | \
+					tr "\n" " " \
+						)
 
 all: MODIFY_INDEX_CSS MODIFY_INDEX_JS MINIFY_INDEX CLEAN
 
