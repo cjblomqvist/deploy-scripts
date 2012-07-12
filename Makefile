@@ -88,7 +88,7 @@ ifneq ($(CSS_FILES),)
 	md5sum $(TEMP_FILE) | \
 		sed 's/ .*//' \
 			> $(TEMP_FILE_CSS)
-	cp $(TEMP_FILE) $(CSS_FINAL).`cat $(TEMP_FILE_CSS)`.css
+	cp $(TEMP_FILE) `echo -n "$(CSS_FINAL)" | sed 's|^/|\./|'`.`cat $(TEMP_FILE_CSS)`.css
 endif
 
 # Create JS file only if CONCAT tag exists for JS
@@ -101,7 +101,7 @@ ifneq ($(JS_FILES),)
 	md5sum $(TEMP_FILE) | \
 		sed 's/ .*//' \
 			> $(TEMP_FILE_JS)
-	cp $(TEMP_FILE) $(JS_FINAL).`cat $(TEMP_FILE_JS)`.js
+	cp $(TEMP_FILE) `echo -n "$(JS_FINAL)" | sed 's|^/|\./|'`.`cat $(TEMP_FILE_JS)`.js
 endif
 
 CLEAN:
