@@ -37,6 +37,7 @@ CSS_FILES = $(shell sed \
 	-e "1,1 d" \
 	-e "/$(END_CSS_TAG)/ d" \
 	-e 's/.*href="\(.*\)".*/\1/' \
+	-e 's|^/|\./|' \
 		< $(INDEX_FILE) | \
 			tr "\n" " " \
 				)
@@ -48,6 +49,7 @@ JS_FILES = $(shell sed \
 	-e "1,1 d" \
 	-e "/$(END_JS_TAG)/ d" \
 	-e 's/.*src="\(.*\)".*/\1/' \
+	-e 's|^/|\./|' \
 		< $(INDEX_FILE) | \
 			tr "\n" " " \
 				)
