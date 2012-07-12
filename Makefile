@@ -16,7 +16,7 @@ YUI = java -jar /opt/yuicompressor-2.4.7/build/yuicompressor-2.4.7.jar
 YUI_FLAGS = --type css
 
 # HTML compressor variables
-HTML_MIN = java -jar /opt/htmlcompressor-1.5.3/htmlcompressor-1.5.3.jar 
+HTML_MIN = java -jar /opt/htmlcompressor-1.5.3/htmlcompressor-1.5.3.jar --preserve-php 
 
 # Temp file used to save INDEX_FILE while processing it
 TEMP_FILE = tmp.tmp
